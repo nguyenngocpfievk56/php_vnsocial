@@ -26,3 +26,5 @@ Route::get('/screen3', function () {
 Route::get('/screen4', function () {
     return view('screen4');
 });
+
+Route::get('/post', 'Post@index');
