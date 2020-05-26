@@ -12,19 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/screen2', function () {
-    return view('screen2');
-});
-
-Route::get('/screen3', function () {
-    return view('screen3');
-});
-
-Route::get('/screen4', function () {
-    return view('screen4');
+    return view('index');
 });
 
 Route::get('/post', 'Post@index');

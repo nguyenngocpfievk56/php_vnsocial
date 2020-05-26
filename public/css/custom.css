@@ -1,2 +1,10 @@
+/** FOOTER **/
 
-/** ADD YOUR AWESOME CODES HERE **/
+.main-footer {
+  height: 50px;
+  text-align: center;
+  background: #cecece;
+  font-size: 30px;
+}
+
+/** END FOOTER **/
