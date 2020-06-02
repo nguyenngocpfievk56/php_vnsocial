@@ -15,4 +15,14 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/posts', function () {
+    return view('post/index');
+});
+Route::get('/detail', function () {
+    return view('post/detail');
+});
+Route::get('/create', function () {
+    return view('post/create');
+});
+
 Route::get('/post', 'Post@index');
