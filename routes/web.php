@@ -1,5 +1,5 @@
 <?php
-
+use App\Shop;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/post', 'Post@index');
+Route::get('/shop', function (){
+    $shops = Shop::get();
+    return view('shop/index',['shops'=>$shops]);
+});
+Route::get('createShop', function (){
+    return view('shop/create');
+});
+Route::post('postForm', 'ShopController@postForm')->name('postForm');
