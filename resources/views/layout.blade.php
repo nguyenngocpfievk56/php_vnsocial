@@ -54,7 +54,9 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
 
     <div class="main-footer">
         &copy; 2020 - VN Social
