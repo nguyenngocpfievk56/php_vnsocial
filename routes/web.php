@@ -26,3 +26,7 @@ Route::get('/create', function () {
 });
 
 Route::get('/post', 'Post@index');
+
+Route::get('/news', 'NewsController@index');
+Route::get('/news/add', 'NewsController@add');
+Route::post('/news/store', 'NewsController@store');
