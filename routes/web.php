@@ -1,5 +1,5 @@
 <?php
-use App\Shop;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,11 +16,15 @@ Route::get('/', function () {
 });
 
 Route::get('/post', 'Post@index');
-Route::get('/shop', function (){
-    $shops = Shop::get();
-    return view('shop/index',['shops'=>$shops]);
+
+Route::get('/news', 'NewsController@index');
+Route::get('/news/add', 'NewsController@add');
+Route::post('/news/store', 'NewsController@store');
+
+
+Route::prefix('shop')->name('shop.')->group(function(){
+    Route::get('/', 'ShopController@index')->name('index');
+    Route::get('/detail/{id}', 'ShopController@detail')->name('detail');
+    Route::get('/create', 'ShopController@create')->name('create');
 });
-Route::get('createShop', function (){
-    return view('shop/create');
-});
-Route::post('postForm', 'ShopController@postForm')->name('postForm');
+
