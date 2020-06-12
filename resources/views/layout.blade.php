@@ -54,7 +54,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container main-container">
         @yield('content')
     </div>
 

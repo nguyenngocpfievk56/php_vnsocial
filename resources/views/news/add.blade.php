@@ -6,6 +6,7 @@
     <div class="col col-md-6 offset-md-3">
       <h3>Đăng tin mới</h3>
       <form action="/news/store" method="POST">
+        @csrf
         <div class="form-group">
           <label>Tiêu đề bài viết</label>
           <input type="text" class="form-control" placeholder="Hãy nhập vào đây" name="title">
