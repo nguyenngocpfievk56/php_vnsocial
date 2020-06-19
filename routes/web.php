@@ -30,3 +30,5 @@ Route::get('/post', 'Post@index');
 Route::get('/news', 'NewsController@index');
 Route::get('/news/add', 'NewsController@add');
 Route::post('/news/store', 'NewsController@store');
+Route::get('/news/delete', 'NewsController@delete');
+Route::get('/news/{id}/{id2}', 'NewsController@detail');
