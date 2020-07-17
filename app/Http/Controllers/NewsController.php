@@ -34,14 +34,12 @@ class NewsController extends Controller
     $news->content = $request->content;
     $news->c_content = $this->convert_vi_to_en($request->content);
     $news->save();
-    die();
+    return redirect('news');
   }
 
-  public function detail(Request $request, News $id, News $id2) {
-    echo '<pre>';
-    print_r($request->id->img);
-    echo '</pre>';
-    die();
+  public function detail(News $news) {
+    $latest = News::limit(3)->get();
+    return view("news.detail", ['news' => $news, 'latest' => $latest]);
   }
 
   public function delete(Request $request) {

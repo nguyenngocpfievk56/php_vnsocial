@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
 <div class="container">
@@ -56,6 +56,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+
+                                <a href="/register" class="btn btn-primary">
+                                    Tạo tài khoản
+                                </a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

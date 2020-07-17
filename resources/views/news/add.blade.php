@@ -20,7 +20,7 @@
           <input type="file" class="form-control-file" name="cover">
         </div>
         <button type="submit" class="btn btn-primary">Đăng tin</button>
-        <button type="button" class="btn btn-secondary">Quay trở lại danh sách</button>
+        <a href="/news" class="btn btn-secondary">Quay trở lại danh sách</a>
       </form>
     </div>
   </div>

@@ -28,7 +28,7 @@ Route::get('/', function () {
 Route::get('/news', 'NewsController@index');
 Route::get('/news/add', 'NewsController@add');
 Route::post('/news/store', 'NewsController@store');
-
+Route::get('/news/detail/{news}', 'NewsController@detail');
 
 // Route::prefix('shop')->name('shop.')->group(function(){
 //     Route::get('/', 'ShopController@index')->name('index');
