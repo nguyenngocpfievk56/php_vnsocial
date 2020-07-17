@@ -41,3 +41,7 @@ Route::post('/news/store', 'NewsController@store');
 // Route::post('/{moduleAlias}/store', 'CommonController@store');
 // Route::get('/{moduleAlias}/{id}', 'CommonController@detail');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
