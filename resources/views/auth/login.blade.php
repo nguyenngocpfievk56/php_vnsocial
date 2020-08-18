@@ -61,6 +61,13 @@
                                     Tạo tài khoản
                                 </a>
 
+                                <?php
+                                    $url = "/login/facebook"
+                                ?>
+                                <a href="<?php echo $url; ?>" class="btn btn-success">
+                                    Log in bang Facebook
+                                </a>
+
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
