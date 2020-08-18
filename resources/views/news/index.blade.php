@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  
+  <a class="btn btn-primary" href="/news/add" role="button">Đăng tin tức mới</a>
   <?php
     if ($news): 
       foreach ($news as $index => $item):
@@ -13,11 +13,13 @@
   ?>
       <div class="col-4">
         <div class="card">
-          <img src="https://cdn.24h.com.vn/upload/4-2019/images/2019-12-17/1576580871-929bdf4f16b86295376a79e7a8a0b7fe.jpg" class="card-img-top">
+          <a href="/news/detail/<?php echo $item->id; ?>">
+            <img src="<?php echo asset($item->img); ?>" class="card-img-top">
+          </a>
           <div class="card-body">
             <h5 class="card-title"><?php echo $item->title ?></h5>
             <p class="card-text"><?php echo $item->content ?></p>
-            <a href="#" class="btn btn-primary">OK</a>
+            <a href="#" class="btn btn-primary">Like</a>
           </div>
         </div>
       </div>
