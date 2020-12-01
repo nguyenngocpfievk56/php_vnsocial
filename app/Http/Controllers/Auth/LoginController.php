@@ -53,6 +53,10 @@ class LoginController extends Controller
         $user = Socialite::driver('facebook')->user();
 
         $userInfo = User::where('facebook_id', $user->id)->first();
+
+
+//   ngocnh.pfiev@gmail.com
+
         $randomPassword = "12312sdafasfkjashfskdf9873453532erwerwe52345435";
 
         if (!$userInfo) {

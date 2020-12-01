@@ -3,20 +3,53 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+
+use App\User;
 
 class NewsController extends Controller
 {
-  public function index() {
+  public function index(Request $request) {
     $news = News::all();
     return view("news.index", ['news' => $news]);
   }
 
-  public function add() {
+  public function add(Request $request) {
     return view("news.add");
+  }
+
+  public function products() {
+    // lay du lieu san pham ra
+    $data = \json_decode($this->_callApi("GET", "http://192.168.36.107/api/get-products"));
+    // dua du lieu vao view
+    return view("news.products", ["data" => $data]);
+  }
+
+  private function _callApi($method, $url) {
+    $curl=curl_init($url);
+    if ($method == "POST") {
+      curl_setopt($curl,CURLOPT_POST, TRUE);
+    }
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($curl,CURLOPT_COOKIEJAR,      'cookie');
+    curl_setopt($curl,CURLOPT_COOKIEFILE,     'tmp');
+    curl_setopt($curl,CURLOPT_FOLLOWLOCATION, TRUE);
+    $output= curl_exec($curl);
+  }
+
+  public function getProducts() {
+    $data = [
+      "May xay sinh to",
+      "Quat dieu hoa",
+      "Noi Com Dien",
+      "May Hut Bui"
+    ];
+    return $data;
   }
 
   public function store(Request $request) {

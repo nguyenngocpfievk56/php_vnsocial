@@ -25,8 +25,8 @@ Route::get('/', function () {
 //     return view('post/create');
 // });
 
-Route::get('/news', 'NewsController@index');
-Route::get('/news/add', 'NewsController@add');
+Route::get('/news', 'NewsController@index')->middleware('testmiddleware');
+Route::get('/news/add', 'NewsController@add')->middleware('testmiddleware');
 Route::post('/news/store', 'NewsController@store');
 Route::get('/news/detail/{news}', 'NewsController@detail');
 
@@ -41,10 +41,19 @@ Route::get('/news/detail/{news}', 'NewsController@detail');
 // Route::post('/{moduleAlias}/store', 'CommonController@store');
 // Route::get('/{moduleAlias}/{id}', 'CommonController@detail');
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+// Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+// Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+// Route::get("/auth/otp", "CustomAuthController@authOtp");
+// Route::get("/auth/send-otp", "CustomAuthController@sendOtp");
+// Route::post("/auth/check-otp", "CustomAuthController@checkOtp");
+// Route::get('/login', 'CustomAuthController@login');
+// Route::post('/auth/do-login', 'CustomAuthController@doLogin');
+// Route::get('/auth/do-logout', 'CustomAuthController@doLogout');
+// Route::get('/', 'HomeController@index');
+
+Route::get("/products", 'NewsController@products');
